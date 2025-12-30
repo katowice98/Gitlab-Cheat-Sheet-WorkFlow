@@ -20,6 +20,7 @@
 | Tạo SSH Key      | `ssh-keygen -t ed25519 -C "email@domain.com"` hoặc <br>```ssh-keygen -t rsa -b 2048 -C "<comment>"``` | Chạy `ssh-keygen -t`với loại khóa và một comment tùy chọn để giúp xác định khóa sau này. Một tùy chọn phổ biến là sử dụng địa chỉ email của bạn làm comment. comment này sẽ được bao gồm trong tệp `.pub`. |
 | Xem Public Key   | ```cat ~/.ssh/id_ed25519.pub```                                                                       | Copy chuỗi này ném lên GitLab Settings.                                                                                                                                                                    |
 | Test kết nối     | ```ssh -T git@gitlab.com```                                                                           | Thấy "Welcome..." là thành công.                                                                                                                                                                           |
+
 **Kiểm tra xem bạn có cặp khóa SSH hiện có hay không.**
 1. Vào thư mục chính của bạn.
 2. Hãy vào `.ssh/`thư mục con. Nếu `.ssh/`thư mục con không tồn tại, có thể bạn không ở trong thư mục chính hoặc bạn chưa từng sử dụng `ssh`trước đây. Trong trường hợp thứ hai, bạn cần [tạo một cặp khóa SSH](https://docs.gitlab.com/user/ssh/#generate-an-ssh-key-pair).
@@ -33,6 +34,7 @@
 | RSA (kích thước khóa tối thiểu 2048 bit) | `id_rsa.pub`        | `id_rsa`        |
 | DSA (đã lỗi thời)                        | `id_dsa.pub`        | `id_dsa`        |
 | ECDSA                                    | `id_ecdsa.pub`      | `id_ecdsa`      |
+
 **Cấu hình SSH để trỏ đến một thư mục khác.**
 Nếu bạn không lưu cặp khóa SSH của mình trong thư mục mặc định, hãy cấu hình ứng dụng SSH client để trỏ đến thư mục nơi lưu trữ khóa riêng tư.
 
@@ -67,7 +69,7 @@ Khóa SSH công khai phải là duy nhất đối với GitLab vì chúng đư�
 git status
 ```
 
-* _Màu đỏ:_ File mới hoặc file sửa chưa được theo dõi (Untracked).
+- _Màu đỏ:_ File mới hoặc file sửa chưa được theo dõi (Untracked).
 - _Màu xanh:_ File đã sẵn sàng để đóng gói (Staged).
 - _Clean:_ Không có gì mới.
 
